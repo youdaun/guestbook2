@@ -47,12 +47,6 @@ public class GuestbookController extends HttpServlet {
 
 		} else if ("deleteform".equals(act)) {
 			System.out.println("action=deleteform");
-
-			int no = Integer.parseInt(request.getParameter("no"));
-			GuestbookDao gDao = new GuestbookDao();
-			GuestbookVo gvo = gDao.getGuest(no);
-
-			request.setAttribute("gvo", gvo);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 			rd.forward(request, response); 	

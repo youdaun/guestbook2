@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-	GuestbookVo gvo = (GuestbookVo)(request.getAttribute("gvo"));
+	int no = Integer.parseInt(request.getParameter("no"));
 %>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 	<form action="/guestbook2/gbc">
 		비밀번호
 		<input type="password" name="password" value="">
-		<input type="hidden" name="no" value="<%=gvo.getNo()%>">
+		<input type="hidden" name="no" value="<%=no%>">
 		<input type="hidden" name="action" value="delete">
 		<button type="submit">확인</button>
 	</form>
